@@ -1168,7 +1168,7 @@ class RealNVP(NormFlow):
         return f_z, log_det_jacobian
 
     def inverse(self, z):
-        """Invert sample z to random variable w.
+        #Invert sample z to random variable w.
 
         # Arguments 
             z (tf.tensor): [K, self.num_params] Tensor containing 
@@ -1176,7 +1176,7 @@ class RealNVP(NormFlow):
         # Returns 
             f_inv_z (tf.tensor): [K, batch_size, self.dim] Result of operation
 
-        """ 
+        
         if len(self.s_param_ind_by_mask)==0:
             print('Error: must call RealNVP.forward_and_jacobian() before RealNVP.inverse().')
             raise EnvironmentError
